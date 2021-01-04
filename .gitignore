@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore the files 
+/posts
+/to_post
+/settings
+/previous_texts
+background.jpg
+photo_info.json
+/fonts
+
+# ignore local config and log 
+/.vscode 
+/config
