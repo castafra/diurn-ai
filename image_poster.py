@@ -28,7 +28,9 @@ class instagramImage():
         self.date = date
 
     def create_background(self):
-        client_id = 'UGQX5yyaanKLcnefTjbhskio0hLyIyC0Wz2pe9HgHRI'
+        with open('settings/unsplash_account.json') as json_file:
+            data = json.load(json_file)
+        client_id = data['access_key']
         r = requests.get('https://api.unsplash.com/search/photos?query='+self.theme+'&page=1&per_page=30&client_id='+client_id)
 
         data = r.json()
