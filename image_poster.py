@@ -34,7 +34,7 @@ class instagramImage():
         r = requests.get('https://api.unsplash.com/search/photos?query='+self.theme+'&page=1&per_page=30&client_id='+client_id)
 
         data = r.json()
-        link = data['results'][0]['urls']['regular']
+        link = data['results'][0]['urls']['raw']
 
         filename = 'background.jpg'
         url.urlretrieve(link,filename)
@@ -49,10 +49,11 @@ class instagramImage():
         fontsize = 1  # starting font size
 
         font = ImageFont.truetype('fonts/typewriter/TYPEWR__.ttf', fontsize)
-        while font.getsize(self.text)[0] < img_fraction*background_image.size[0]:
+        while font.getsize(self.text)[0]/3 < img_fraction*background_image.size[0]:
             # iterate until the text size is just larger than the criteria
             fontsize += 1
             font = ImageFont.truetype('fonts/typewriter/TYPEWR__.ttf', fontsize)
+            
 
         image_editable = ImageDraw.Draw(background_image)
 
@@ -77,7 +78,7 @@ class instagramImage():
             data = json.load(json_file)
         username = data['username']
         password = data['password']
-        picture = data['image_loc']
+        picture = "C:\\Users\\François\\Deep Learning\\diurn-ai\\to_post"
 
         to_post = os.listdir('to_post')
         if len(to_post) > 0 : 

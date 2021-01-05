@@ -28,11 +28,7 @@ while font.getsize(text)[0] < img_fraction*background_image.size[0]:
     fontsize += 1
     font = ImageFont.truetype('fonts/typewriter/TYPEWR__.ttf', fontsize)
 
-
-
-
 image_editable = ImageDraw.Draw(background_image)
-
 
 w, h = image_editable.textsize(text,font=font)
 image_editable.text(((W-w)/2,(H-h)/2), text, (255, 255, 255), font=font)
