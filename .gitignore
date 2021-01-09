@@ -136,6 +136,7 @@ dmypy.json
 background.jpg
 photo_info.json
 /fonts
+*.psd
 
 # ignore local config and log 
 /.vscode 
