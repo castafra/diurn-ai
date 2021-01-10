@@ -77,6 +77,7 @@ class instagramImage():
             
             background_image.save("photo_to_post/"+self.date+"-"+str(k+1)+theme+".jpg")
             background_image.save("posts/"+self.date+"-"+str(k+1)+theme+".jpg")
+            background_image.save("story_to_post/"+self.date+"-"+str(k+1)+theme+".jpg")
             k += 1
 
         #SAVE THE CAPTION IN THE 2 POST FOLDERS 
@@ -85,7 +86,25 @@ class instagramImage():
         with open("posts/"+self.date+"-"+theme+".txt",'w') as text_file : 
             text_file.write(self.caption)
 
-        
+    def post_story(self):
+        with open('settings/ig_account.json') as json_file:
+            data = json.load(json_file)
+        username = data['username']
+        password = data['password']
+        picture = "C:\\Users\\François\\Deep Learning\\diurn-ai\\story_to_post"
+
+        to_post = os.listdir('story_to_post')
+        pictures_tp = []
+        if len(to_post) > 0 : 
+            for file in to_post: 
+                if file.endswith(".jpg"):
+                    pictures_tp.append( picture +'\\'+ file)
+
+            ### UPLOAD STORY 
+            bot = Bot() 
+            bot.login(username = username,  password = password) 
+            bot.upload_story_photo(pictures_tp[1])
+
     def post_image(self):
         with open('settings/ig_account.json') as json_file:
             data = json.load(json_file)

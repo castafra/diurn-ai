@@ -130,10 +130,12 @@ dmypy.json
 
 # Ignore the files 
 /posts
-/to_post
+/photo_to_post
 /settings
 /previous_texts
-background.jpg
+/backgrounds
+/story_to_post
+/caption_to_post
 photo_info.json
 /fonts
 *.psd

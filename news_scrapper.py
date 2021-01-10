@@ -102,14 +102,14 @@ class getNews():
                     j=-1
                 j+=1
             NEW = NEW + toks[-1]
-            raw_NEW = raw_NEW[:-1]+'.'
+            raw_NEW = ''.join(raw_NEW)[:-1]+'.'
             raw_NEWS.append(raw_NEW)
             NEWS.append(NEW)
 
         id1 = random.randint(1,3)
         id2 = random.randint(1,3) + id1
         history_fact = "On this date : \n"+"In "+self.events_year[id1]+', '+self.events[id1]+'\n'+"In "+self.events_year[id2]+', '+self.events[id2]
-        Caption = 'Hello everyone, today is ' + date +'\n\n<b>History Facts :\n'+history_fact+'\n\nOn the news today :\n\n'+raw_NEWS[0]+'\n\n'+raw_NEWS[1]+'\n\n'+raw_NEWS[2]+'\n\n'+'\n\nSource: Reuters\nImages: Unsplash'
+        Caption = 'Hello everyone, today is ' + date +'\n\nHistory Facts :\n'+history_fact+'\n\nOn the news today :\n\n'+raw_NEWS[0]+'\n\n'+raw_NEWS[1]+'\n\n'+raw_NEWS[2]+'\n\n'+'\n\nSource: Reuters\nImages: Unsplash'
 
         photo_info = open("photo_info.json","r")
         json_news = json.load(photo_info)
