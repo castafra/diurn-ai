@@ -24,7 +24,4 @@ def post(what = "photo"):
 if __name__ == "__main__":
     scrap()
     post("photo")
-    #sec = random.randint(52,123)
-    #time.sleep(sec)
-    #post("story")
     
