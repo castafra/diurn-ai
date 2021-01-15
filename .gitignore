@@ -141,6 +141,7 @@ photo_info.json
 *.psd
 /summarization
 diurn_script.bat
+transformer_summarization.py
 
 # ignore local config and log 
 /.vscode 
