@@ -1,6 +1,6 @@
 <h1><center>Diurn.ai : The instagram page that summarizes the news</center></h1>   
 
-<img src="files/images/ig-showcase.PNG" width = 700cm>
+![Alt Text](https://github.com/castafra/diurn-ai/blob/main/images/ig-showcase.PNG?raw=true)
 
 ## Introduction
 
